@@ -1,10 +1,12 @@
 {
-  "name": "ers-backend",
+  "name": "ers",
   "version": "1.0.0",
   "description": "",
   "main": "ers-backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",

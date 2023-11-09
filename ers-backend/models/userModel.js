@@ -27,14 +27,21 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "user",
   },
-  provider :{
-    type:String,
-    default:"email",
-  },
   flag:{
     type:String,
     default:"changed",
   },
+  myReviews :[{
+    name :{
+      type:String,
+    },
+    review:{
+      type:String,
+    }
+  }],
+  reviewsLeft : [{
+    type:String,
+  }],
   createdAt: {
     type: Date,
     default: Date.now,

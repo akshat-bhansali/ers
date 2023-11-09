@@ -51,7 +51,6 @@ exports.signWithGoogle = catchAsyncErrors(async (req, res, next) => {
       email,
       password,
       flag :"initial",
-      provider:"gmail",
     });
     sendToken(user, 201, res);
     localStorage.setItem("flag","initial");
