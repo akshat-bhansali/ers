@@ -21,6 +21,8 @@ const Login = () => {
         `http://localhost:4000/api/v1/googleAuth`,
         { name, email }
       );
+      localStorage.setItem("user",email)
+      window.location.reload();
       console.log("logged in");
     } catch (error) {
       console.log(error);
