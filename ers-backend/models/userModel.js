@@ -27,10 +27,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "user",
   },
-  flag:{
-    type:String,
-    default:"changed",
-  },
   myReviews :[{
     name :{
       type:String,
