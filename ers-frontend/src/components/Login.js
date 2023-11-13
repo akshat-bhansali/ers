@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 import { gapi } from "gapi-script";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+
+  const Navigate = useNavigate();
   const clientId =
     "1045613546992-lk67gqk2dlbt1scjtt1s5vpv67rrriq7.apps.googleusercontent.com";
 
@@ -22,6 +25,7 @@ const Login = () => {
         { name, email }
       );
       localStorage.setItem("user",email)
+      Navigate('/reviews');
       window.location.reload();
       console.log("logged in");
     } catch (error) {
@@ -30,8 +34,7 @@ const Login = () => {
   };
   return (
     <>
-      <p>LOGIN</p>
-      
+    <div className="flex flex-row-reverse justify-around ml-12">
       <GoogleLogin
           clientId={clientId}
           buttonText="Login"
@@ -44,6 +47,10 @@ const Login = () => {
           }}
           cookiePolicy={"single_host_origin"}
         />
+        <h1 className="flex items-center space-x-3 rtl:space-x-reverse ml-12">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Dashboard</span>
+        </h1>
+      </div>
       
     </>
   );
