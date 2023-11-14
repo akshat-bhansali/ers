@@ -1,13 +1,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Modal from './AssignModal';
 import EditRoleModal from './EditRoleModal';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EmployeeCard = ({ name, email, role, status }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const modalRef = useRef(null);
 
+  const notify = () => toast("Deleted");
+
   const deleteCard = () => {
-    alert(`Deleting user: ${name}`);
+    // alert(`Deleting user: ${name}`);
+    notify();
     // Add your logic for deleting the user here
   };
 
@@ -64,6 +69,18 @@ const EmployeeCard = ({ name, email, role, status }) => {
         >
           Delete
         </button>
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </div>
       <EditRoleModal email={email} role={role} />
       <Modal email={email} />

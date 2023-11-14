@@ -2,8 +2,8 @@ import React from 'react';
 
 const ReviewCard = ({ reviewer, review }) => {
   return (
-    <div className="max-w-md bg-white rounded-md overflow-hidden shadow-md p-6 mb-10 ml-10 h-2/6 bg-blue-300">
-      <h2 className="text-2xl font-semibold mb-4">Review Card</h2>
+    <div className="max-w-md rounded-md overflow-hidden shadow-md p-6 mb-10 ml-10 h-2/6 bg-blue-300">
+      <h2 className="text-2xl font-semibold mb-4 ">Review Card</h2>
       <div className="mb-4">
         <label htmlFor="reviewer" className="block text-sm font-medium text-gray-700">
           Reviewer
