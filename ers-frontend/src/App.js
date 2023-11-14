@@ -7,6 +7,7 @@ import Profile from './components/Profile';
 import AllUsers from './components/AllUsers';
 import Private1 from './components/Private1';
 import Private2 from './components/Private2';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       </Route>
 
     </Routes>
+    <Footer/>
       </BrowserRouter>
     </>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
 import EmployeeCard from './EmployeeCard';
-import Footer from './Footer';
 
 const AllUsers = () => {
   const name = "ayush";
@@ -11,11 +10,11 @@ const AllUsers = () => {
   const email2 = "anand@gmail.com"
   return (
     <>
-      <div className='h-screen pt-32 bg-blue-100'>
+      <div className='pt-32 bg-blue-100'>
         <div>
           <h1 className='text-center text-4xl font-bold'>All Users</h1>
         </div>
-        <div className='flex flex-wrap mt-20 mb-6 bg-blue-100'>
+        <div className='flex flex-wrap mt-20 mb-6 bg-blue-100 min-h-screen'>
           <EmployeeCard name={name} email={email} role={role} status={status}/>
           <EmployeeCard name={name} email={email2} role={role} status={status}/>
           <EmployeeCard name={name} email={email} role={role} status={status}/>
@@ -24,8 +23,8 @@ const AllUsers = () => {
           <EmployeeCard name={name} email={email} role={role} status={status}/>
           <EmployeeCard name={name} email={email} role={role} status={status}/>
           <EmployeeCard name={name} email={email} role={role} status={status}/>
+
         </div>
-        <Footer/>
       </div>
 
     </>
