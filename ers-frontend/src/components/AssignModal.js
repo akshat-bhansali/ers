@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Modal = ({ email }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -8,6 +10,10 @@ const Modal = ({ email }) => {
   const [reviewerEmails, setReviewerEmails] = useState([]);
   const modalRef = useRef(null);
   const [isFormValid, setIsFormValid] = useState(false);
+
+  const notifyAssign = () => toast("Review Assigned");
+  const notifyFill = () =>toast("Please fill out all fields in the form.")
+
 
   const toggleModal = () => {
     setIsModalVisible(!isModalVisible);
@@ -19,13 +25,9 @@ const Modal = ({ email }) => {
     if (isFormValid) {
       setIsModalVisible(false);
       // Add your logic for handling the form submission here
-      console.log('Form submitted!');
-      console.log('Selected Role:', selectedRole);
-      console.log('Selected Email:', selectedEmail);
-      console.log('User Email:', fromEmail);
-      alert(`Credentials:\nUser Email: ${fromEmail}\nRole: ${selectedRole}\nReviewer Email: ${selectedEmail}`);
+      notifyAssign();
     } else {
-      alert('Please fill out all fields in the form.');
+      notifyFill();
     }
 
     closeOnOutsideClick(e);
@@ -216,6 +218,18 @@ const Modal = ({ email }) => {
                   >
                     Assign Review
                   </button>
+                  <ToastContainer
+                    position="top-center"
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="light"
+                  />
                 </form>
               </div>
             </div>

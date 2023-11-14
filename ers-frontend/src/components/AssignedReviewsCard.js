@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AssignedReviewsCard = ({recepientEmail}) => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const notifyReview = () => toast("Review Submitted");
 
   useEffect(() => {
     // Set the email from the prop when the component mounts or when recipientEmail changes
@@ -15,11 +19,8 @@ const AssignedReviewsCard = ({recepientEmail}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your logic for handling the form submission here
-    console.log('Form submitted!');
-    console.log('Recipient:', email);
-    console.log('Review:', message);
-    alert("Review Submitted");
+    
+    notifyReview();
     // You can send this data to your backend or perform any other actions
   };
 
@@ -63,6 +64,18 @@ const AssignedReviewsCard = ({recepientEmail}) => {
         >
           Submit Review
         </button>
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </form>
     </div>
   );
