@@ -1,11 +1,24 @@
-import React from 'react'
+import React from 'react';
+import AssignedReviewsCard from './AssignedReviewsCard';
+import Footer from './Footer';
 
 const AssignedReviews = () => {
-  return (
-    <div  className="flex items-center justify-center h-screen">
-        <h1>ASSIGNED REVIEWS</h1>
-    </div>
-  )
-}
+  // Assuming you have an array of emails
+  const emails = ["ayush@gmail.com", "john@example.com", "alice@example.com"];
 
-export default AssignedReviews
+  return (
+    <>
+      <div className="h-screen pt-32 bg-blue-100">
+        <h1 className="text-center text-4xl font-bold mb-10">Assigned Reviews</h1>
+        <div className="flex flex-wrap flex-start">
+          {emails.map((email, index) => (
+            <AssignedReviewsCard recepientEmail={email} />
+          ))}
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export default AssignedReviews;
