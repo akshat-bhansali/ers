@@ -24,7 +24,7 @@ const AssignedReviewsCard = ({recepientEmail}) => {
   };
 
   return (
-    <div className="max-w-md bg-white rounded-md overflow-hidden shadow-md p-6 ml-10 mb-10 h-2/5 bg-blue-300">
+    <div className="max-w-md rounded-md overflow-hidden shadow-md p-6 ml-10 mb-10 h-2/5 bg-blue-300">
       <h2 className="text-2xl font-semibold mb-4">Provide Review</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
