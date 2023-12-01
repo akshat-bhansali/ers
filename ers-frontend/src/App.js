@@ -8,6 +8,7 @@ import AllUsers from './components/AllUsers';
 import Private1 from './components/Private1';
 import Private2 from './components/Private2';
 import Footer from './components/Footer';
+import LoginSignUp from './components/LoginSignUp';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
     <BrowserRouter>
     <Navbar/>
     <Routes>
-
+      <Route path='/' element={
+    <LoginSignUp/>}/>
       <Route element ={<Private1/>}>
       <Route path='/reviews' element={<MyReviews/>} />
       <Route path='/assigned' element={<AssignedReviews/>} />
